@@ -104,9 +104,8 @@ module.exports = function (db) {
         resave: true,
         secret: config.sessionSecret,
         store: new mongoStore({
-//			db: 'heroku_8gx57h6h',
-            url: process.env.MONGOLAB_URI,
-            collection: 'sessions'
+            db: db.connection.db,
+            collection: config.sessionCollection
         }),
         cookie: config.sessionCookie,
         name: config.sessionName

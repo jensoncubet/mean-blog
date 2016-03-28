@@ -18,3 +18,11 @@ body.ng-cloak
 {
 	display: block;
 }
+.logo-center{
+    width: 500px;
+    height: 100px;
+}
+
+.banner-div{
+    background-color: #BBB9DB !important;
+}

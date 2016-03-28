@@ -1,0 +1,28 @@
+<section data-ng-controller="HomeController" ng-init="getTodoList()">
+    <h3>TODO LIST</h3>
+    <form name="todolist" ng-submit="saveTodo()">
+        <input type="text" ng-model="todo.name" placeholder="Name" required="true">
+        <input type="text" ng-model="todo.place" placeholder="Place" required="true">
+        <button type="submit">Save</button>
+    </form>
+
+    <table class="table" ng-show="todoArray.length">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="eachTodo in todoArray">
+                <td>{{$index + 1}}</td>
+                <td>{{eachTodo.name}}</td>
+                <td>{{eachTodo.place}}</td>
+                <td><a href="javascript:void(0)" ng-click="deleteTodo(eachTodo._id, $index)">Delete</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+</section>
